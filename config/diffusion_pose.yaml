@@ -1,0 +1,64 @@
+model_arch: diffusion
+freeze_world_enhancer: False
+
+optimizer:
+  name : Adam
+  lr   : 0.01
+  betas: [0.5, 0.999]
+  eps  : 0.000001
+  weight_decay: 0
+
+lr_scheduler:
+  name: StepLR
+  step_size: 1
+  gamma: 0.5
+
+bn:
+  bn_momentum: 0.9
+  bn_decay: 0.5
+  decay_step: 4000
+  bnm_clip: 0.01
+
+max_epoch : 1000
+num_mini_batch_per_epoch: 2000
+
+num_category: 6
+num_prior: 1024
+
+loss:
+  gamma1: 1.0
+  gamma2: 10
+
+train_dataset:
+  img_size: 192
+  sample_num: 1024
+  shift_range: 0.01
+  use_shape_aug: True
+  aug_bb_pro: 0.3
+  aug_rt_pro: 0.3
+  aug_bc_pro: 0.0
+  aug_pc_pro: 0.0
+  aug_pc_r: 0.002 # change 2mm on pc
+  aug_nl_pro: 0.0
+
+train_dataloader:
+  syn_bs: 48
+  # syn_bs: 24
+  # real_bs: 24
+  num_workers: 48
+  shuffle: True
+  drop_last: True
+  pin_memory: False
+  use_fill_miss: True
+  use_composed_img: False
+  per_obj: ''
+
+test:
+  img_size: 192
+  sample_num: 1024
+  test_path: 
+  
+rd_seed: 1
+
+per_val: 10  # do the evaluation per per_val epochs 
+per_write: 50  # write down the info per per_write iterations
