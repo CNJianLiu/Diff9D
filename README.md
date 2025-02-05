@@ -56,8 +56,8 @@ If you find our work useful, please consider citing:
 ```latex
 @article{Diff9D,
   author={Liu, Jian and Sun, Wei and Yang, Hui and Deng, Pengchao and Liu, Chongpei and Sebe, Nicu and Rahmani, Hossein and Mian, Ajmal},
-  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
   title={Diff9D: Diffusion-Based Domain-Generalized Category-Level 9-DoF Object Pose Estimation},
+  journal={arXiv preprint arXiv:2502.02525},
   year={2025}
 }
 ```
