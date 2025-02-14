@@ -40,7 +40,7 @@ The real-world Wild6D dataset can be evaluated using the following command:
 ```
 bash test_wild6d.sh
 ```
-Note that there is a small mistake in the original evaluation code of [NOCS](https://github.com/hughw19/NOCS_CVPR2019/blob/dd58dbf68feede04c3d7bbafeb9212af1a43422f/utils.py#L252) for the 3D IOU metrics. We thank [CATRE](https://github.com/THU-DA-6D-Pose-Group/CATRE) and [SSC-6D](https://github.com/swords123/SSC-6D) for pointing out this. We have revised it and recalculated the metrics of some methods. The revised evaluation code is given in our released [code](https://github.com/CNJianLiu/Diff9D/blob/1ca38c2bd3f5e896470ad76dcb3ba8e64a2aeff2/utils/evaluation_utils.py#L128).
+Note that there is a small mistake in the original evaluation code of [NOCS](https://github.com/hughw19/NOCS_CVPR2019/blob/dd58dbf68feede04c3d7bbafeb9212af1a43422f/utils.py#L252) for the 3D IOU metrics. We thank [CATRE](https://github.com/THU-DA-6D-Pose-Group/CATRE) and [SSC-6D](https://github.com/swords123/SSC-6D) for pointing out this. We have revised it and recalculated the metrics of some methods. The revised evaluation code is given in our released [code](https://github.com/CNJianLiu/Diff9D/blob/f067cea0f16d2dcdb20e28899efef21eb76b8ecd/utils/evaluation_utils.py#L128C30-L128C47).
 
 ## Training
 To train the model, remember to download the synthetic CAMERA25 dataset and organize & preprocess it properly.
