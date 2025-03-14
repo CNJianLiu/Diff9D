@@ -124,7 +124,7 @@ class DIFFUSION(nn.Module):
         # input()
 
         shape_global, nocs_shape_global = self.shape_mlp(shape, nocs_shape) # b*192
-        # 在这里实现 DDPM 的前向传播，包括条件输入的处理
+        
         if self.training:
             gt_s = inputs['gt_s']
             gt_t = inputs['gt_t']
@@ -213,34 +213,6 @@ class DIFFUSION(nn.Module):
                     time_cond = self.time_cond(time_cond)
                     condition_emb_init = torch.cat([time_cond, rgb_global, pts_global, shape_global, nocs_shape_global], dim=-1)    # (B,1792)
                     condition_emb_init = condition_emb_init.unsqueeze(1)   # (B,1,1792)
-
-                    # # Original Diff9D
-                    # pose_emb_init = self.pose_mlp(noised_pose)
-                    # pose_emb_1 = self.denoise_net_FCAM1(torch.cat([condition_emb_init, pose_emb_init], dim=-1))
-                    # pose_emb_2 = self.denoise_net_FCAM2(pose_emb_1)
-                    # pose_emb_3 = self.denoise_net_FCAM3(pose_emb_2)
-                    # pose_emb_4 = self.denoise_net_FCAM4(pose_emb_3)
-                    # pose_34 = self.pose_condition_concat2(pose_emb_3, pose_emb_4)
-                    # pose_emb_5 = self.denoise_net_FCAM5(pose_34)
-                    # pose_25 = self.pose_condition_concat1(pose_emb_2, pose_emb_5)
-                    # pose_emb_6 = self.denoise_net_FCAM6(pose_25) 
-                    # pose_16 = self.pose_condition_concat0(pose_emb_1, pose_emb_6)
-                    # pose_emb_7 = self.denoise_net_FCAM7(pose_16) 
-                    # pred_noise_pose = self.pose_decoder(pose_emb_7)
-
-                    # # Plain Regression Model
-                    # pose_emb_1 = self.denoise_net_FCAM1(condition_emb_init)
-                    # pose_emb_2 = self.denoise_net_FCAM2(pose_emb_1)
-                    # pose_emb_3 = self.denoise_net_FCAM3(pose_emb_2)
-                    # pose_emb_4 = self.denoise_net_FCAM4(pose_emb_3)
-                    # pose_34 = self.pose_condition_concat2(pose_emb_3, pose_emb_4)
-                    # pose_emb_5 = self.denoise_net_FCAM5(pose_34)
-                    # pose_25 = self.pose_condition_concat1(pose_emb_2, pose_emb_5)
-                    # pose_emb_6 = self.denoise_net_FCAM6(pose_25) 
-                    # pose_16 = self.pose_condition_concat0(pose_emb_1, pose_emb_6)
-                    # pose_emb_7 = self.denoise_net_FCAM7(pose_16) 
-                    # pred_pose = self.pose_decoder(pose_emb_7)
-
 
                     pose_s_emb_init = self.pose_s_mlp(sample_s)
                     pose_s_emb_1 = self.denoise_s_net_FCAM1(torch.cat([condition_emb_init, pose_s_emb_init], dim=-1))
