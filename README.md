@@ -1,6 +1,6 @@
 # Diff9D: Diffusion-Based Domain-Generalized Category-Level 9DoF Object Pose Estimation
 
-This is the PyTorch implementation of paper **[Diff9D](https://arxiv.org/abs/2502.02525)** by <a href="https://cnjliu.github.io/">J. Liu</a>, <a href="http://robotics.hnu.edu.cn/info/1071/1265.htm">W. Sun</a>, <a href="https://github.com/CNJianLiu/Diff9D">H. Yang</a>, <a href="https://github.com/CNJianLiu/Diff9D">P. Deng</a>, <a href="https://github.com/CNJianLiu/Diff9D">C. Liu</a>, <a href="https://scholar.google.com.hk/citations?user=stFCYOAAAAAJ&hl=zh-CN&oi=ao">N. Sebe</a>, <a href="https://sites.google.com/view/rahmaniatlu">H. Rahmani</a>, and <a href="https://ajmalsaeed.net/">A. Mian</a>. Diff9D is a simple yet effective prior-free domain-generalized (sim2real) category-level 9DoF object pose generator based on diffusion.
+This is the PyTorch implementation of paper **[Diff9D](https://arxiv.org/abs/2502.02525)** published in <b>*IEEE TPAMI*</b> by <a href="https://cnjliu.github.io/">J. Liu</a>, <a href="http://robotics.hnu.edu.cn/info/1071/1265.htm">W. Sun</a>, <a href="https://github.com/CNJianLiu/Diff9D">H. Yang</a>, <a href="https://github.com/CNJianLiu/Diff9D">P. Deng</a>, <a href="https://github.com/CNJianLiu/Diff9D">C. Liu</a>, <a href="https://scholar.google.com.hk/citations?user=stFCYOAAAAAJ&hl=zh-CN&oi=ao">N. Sebe</a>, <a href="https://sites.google.com/view/rahmaniatlu">H. Rahmani</a>, and <a href="https://ajmalsaeed.net/">A. Mian</a>. Diff9D is a simple yet effective prior-free domain-generalized (sim2real) category-level 9DoF object pose generator based on diffusion.
 
 <p align="center">
 <img src="image/Fig0.jpg" alt="intro" width="100%"/>
@@ -40,7 +40,7 @@ The real-world Wild6D dataset can be evaluated using the following command:
 ```
 bash test_wild6d.sh
 ```
-Note that there is a small mistake in the original evaluation code of [NOCS](https://github.com/hughw19/NOCS_CVPR2019/blob/dd58dbf68feede04c3d7bbafeb9212af1a43422f/utils.py#L252) for the 3D IOU metrics. We thank [CATRE](https://github.com/THU-DA-6D-Pose-Group/CATRE) and [SSC-6D](https://github.com/swords123/SSC-6D) for pointing out this. We have revised it and recalculated the metrics of some methods. The revised evaluation code is given in our released [code](https://github.com/CNJianLiu/Diff9D/blob/f067cea0f16d2dcdb20e28899efef21eb76b8ecd/utils/evaluation_utils.py#L128C30-L128C47).
+Note that there is a small mistake in the original evaluation code of [NOCS](https://github.com/hughw19/NOCS_CVPR2019/blob/dd58dbf68feede04c3d7bbafeb9212af1a43422f/utils.py#L252) for the 3D IOU metrics. We thank [CATRE](https://github.com/THU-DA-6D-Pose-Group/CATRE) and [SSC-6D](https://github.com/swords123/SSC-6D) for pointing out this. We have revised it and recalculated the metrics of some methods. The revised evaluation code is given in our released [code](https://github.com/CNJianLiu/Diff9D/blob/1ca38c2bd3f5e896470ad76dcb3ba8e64a2aeff2/utils/evaluation_utils.py#L128).
 
 ## Training
 To train the model, remember to download the synthetic CAMERA25 dataset and organize & preprocess it properly.
@@ -56,8 +56,8 @@ If you find our work useful, please consider citing:
 ```latex
 @article{Diff9D,
   author={Liu, Jian and Sun, Wei and Yang, Hui and Deng, Pengchao and Liu, Chongpei and Sebe, Nicu and Rahmani, Hossein and Mian, Ajmal},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
   title={Diff9D: Diffusion-Based Domain-Generalized Category-Level 9-DoF Object Pose Estimation},
-  journal={arXiv preprint arXiv:2502.02525},
   year={2025}
 }
 ```
