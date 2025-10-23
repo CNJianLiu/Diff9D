@@ -59,7 +59,9 @@ If you find our work useful, please consider citing:
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
   title={Diff9D: Diffusion-Based Domain-Generalized Category-Level 9-DoF Object Pose Estimation},
   year={2025},
-  pages={1-17},
+  volume={47},
+  number={7},
+  pages={5520-5537},
   doi={10.1109/TPAMI.2025.3552132}
 }
 ```
